@@ -10,9 +10,8 @@ router.get('/', (req, res, next) => {
 router.post('/', async (req, res, next) => {
   const project = req.body;
   try {
-      await controllers.create(project);
-      res.status(201).json({message: "Project added to the database"});
-
+    await controllers.create(project);
+    res.status(201).json({ message: 'Project added to the database' });
   } catch (error) {
     next(new Error(error.message));
   }

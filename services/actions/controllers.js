@@ -1,5 +1,5 @@
 const Actions = require('./model');
 
-exports.create =  action => {
+exports.create = action => {
   return Actions.create(action);
 };
