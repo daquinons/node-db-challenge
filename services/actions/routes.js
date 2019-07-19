@@ -13,4 +13,14 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.get('/:id', async (req, res, next) => {
+  const id = req.params.id;
+  try {
+    const action = await controllers.getById(id);
+    res.json(action);
+  } catch (error) {
+    next(new Error(error.message));
+  }
+});
+
 module.exports = router;
