@@ -2,7 +2,7 @@ exports.up = function(knex) {
   return knex.schema.createTable('Actions', table => {
     table.increments();
     table.text('description').notNullable();
-    table.text('notes').notNullable();
+    table.text('notes');
     table.boolean('is_complete').notNullable();
     table
       .integer('project_id')
